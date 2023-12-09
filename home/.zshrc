@@ -49,9 +49,10 @@ alias b="br -sdp --show-git-info"
 alias f="fzf"
 
 # Navigation Aliases
-alias saggit="cd /Users/mateipinzaru/Work/SAG/git"
-alias tf="cd /Users/mateipinzaru/Work/SAG/git/terraform"
+alias saggit="cd ~/Work/SAG/git"
+alias tf="cd ~/Work/SAG/git/terraform"
 alias home="cd ~"
+alias homesick="cd ~/.homesick/repos/dotfiles"
 
 # Fig post block. Keep at the bottom of this file.
 if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
