@@ -1,1 +1,0 @@
-xargs brew install < brew_programs_list.txt
