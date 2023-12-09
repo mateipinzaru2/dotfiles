@@ -1,0 +1,41 @@
+# Render prompt on single line
+add_newline = true
+command_timeout = 1000
+format = '$azure$kubernetes$all'
+
+# Disable prompt line break
+[line_break]
+disabled = false
+
+# Enable Azure in prompt
+[azure]
+disabled = false
+style = 'bold cyan'
+
+# Drop default prompt character
+[character]
+disabled = false
+# success_symbol = ''
+# error_symbol = ''
+
+# Shows kubernetes context and namespace
+[kubernetes]
+disabled = false
+format = 'via [󱃾 $context\($namespace\)](bold blue) '
+
+# Shows current directory
+[directory]
+disabled = false
+style = 'bold purple'
+truncation_symbol = '…/'
+format = 'at [$path]($style)[$read_only]($read_only_style) '
+
+# Shows current git branch
+[git_branch]
+disabled = false
+style = 'bold green'
+
+# Shows terraform version
+[terraform]
+disabled = false
+format = 'via [󱁢 $version]($style) '
