@@ -1,8 +1,5 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# Fig pre block. Keep at the top of this file.
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-  fi
 
 # Starship
 eval "$(starship init zsh)"
@@ -53,10 +50,6 @@ alias saggit="cd ~/Work/SAG/git"
 alias tf="cd ~/Work/SAG/git/terraform"
 alias home="cd ~"
 alias homesick="cd ~/.homesick/repos/dotfiles"
-
-# Fig post block. Keep at the bottom of this file.
-if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-  fi
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
