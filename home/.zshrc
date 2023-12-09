@@ -49,7 +49,7 @@ alias f="fzf"
 alias saggit="cd ~/Work/SAG/git"
 alias tf="cd ~/Work/SAG/git/terraform"
 alias home="cd ~"
-alias homesick="cd ~/.homesick/repos/dotfiles"
+alias homesick="cd ~/.homesick/repos/dotfiles/home"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
