@@ -7,16 +7,16 @@ format = '$azure$kubernetes$all'
 [line_break]
 disabled = false
 
-# Enable Azure in prompt
-[azure]
-disabled = false
-style = 'bold cyan'
-
 # Drop default prompt character
 [character]
 disabled = false
 # success_symbol = ''
 # error_symbol = ''
+
+# Enable Azure in prompt
+[azure]
+disabled = false
+style = 'bold cyan'
 
 # Shows kubernetes context and namespace
 [kubernetes]

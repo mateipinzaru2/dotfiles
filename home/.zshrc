@@ -12,22 +12,29 @@ fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*" --glob "!.terraform/*"'
-export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!.git/*" --glob "!.terraform/*"'
-export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' \
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*' --glob '!.terraform/*'"
+export FZF_CTRL_T_COMMAND="rg --files --hidden --glob '!.git/*' --glob '!.terraform/*'"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}' \
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+function f {
+  fzf \
+  --preview 'bat --color=always {}' \
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'
+}
+function d {
+  fzf --bind "start:reload(rg --files --hidden --glob '!.git/*' --glob '!.terraform/*' --null \
+  | xargs -0 dirname | uniq)"
+}
 
 # Broot
-source /Users/mateipinzaru/.config/broot/launcher/bash/br
+source "$HOME/.config/broot/launcher/bash/br"
 
 # VS Code
 export EDITOR="code -w"
 export GIT_EDITOR="code -w"
 export VISUAL="code -w"
-
-# Use VS Code for man pages
 function m {
-    man $1 | col -bx | open -fa "/Applications/Visual\ Studio\ Code.app"
+    man $1 | col -bx | open -fa /Applications/Visual\ Studio\ Code.app
 }
 
 # App Aliases
@@ -36,16 +43,6 @@ alias ls="ls-go -n -l -a -S -L"
 alias lst="ls-go -n -l -a -S -L -r"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias b="br -sdp --show-git-info"
-alias bat="bat \
-  --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null \
-  && echo default || echo GitHub)"
-alias f="fzf \
-  --preview 'bat -n --color=always {}' \
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
-alias d="fzf \
-  --bind 'start:reload(rg --hidden --files --null \
-  --glob \"!.git/*\" --glob \"!.terraform/*\" \
-  | xargs -0 dirname | uniq)'"
 
 # Navigation Aliases
 alias saggit="cd ~/Work/SAG/git"
