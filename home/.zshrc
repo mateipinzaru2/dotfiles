@@ -21,9 +21,14 @@ export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' \
 source /Users/mateipinzaru/.config/broot/launcher/bash/br
 
 # VS Code
-export EDITOR="code"
-export GIT_EDITOR="code"
-export VISUAL="code"
+export EDITOR="code -w"
+export GIT_EDITOR="code -w"
+export VISUAL="code -w"
+
+# Use VS Code for man pages
+function m {
+    man $1 | col -bx | open -fa "/Applications/Visual\ Studio\ Code.app"
+}
 
 # App Aliases
 alias k="kubectl"
@@ -32,13 +37,15 @@ alias lst="ls-go -n -l -a -S -L -r"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias b="br -sdp --show-git-info"
 alias bat="bat \
-  --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && \
-  echo default || echo GitHub)"
+  --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null \
+  && echo default || echo GitHub)"
 alias f="fzf \
   --preview 'bat -n --color=always {}' \
   --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 alias d="fzf \
-  --bind 'start:reload(rg --hidden --files --null | xargs -0 dirname | uniq)'"
+  --bind 'start:reload(rg --hidden --files --null \
+  --glob \"!.git/*\" --glob \"!.terraform/*\" \
+  | xargs -0 dirname | uniq)'"
 
 # Navigation Aliases
 alias saggit="cd ~/Work/SAG/git"
