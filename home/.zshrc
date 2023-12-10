@@ -3,14 +3,19 @@
 
 # Starship
 eval "$(starship init zsh)"
-if [[ $TERM_PROGRAM = "WarpTerminal" ]]; then
-  export STARSHIP_CONFIG=~/.config/starship_warp.toml
+if [[ $TERM_PROGRAM = "WarpTerminal" ]] 
+  then 
+    export STARSHIP_CONFIG=~/.config/starship_warp.toml
+  else
+    export STARSHIP_CONFIG=~/.config/starship.toml
 fi
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!.git/*" --glob "!.terraform/*"'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git/*" --glob "!.terraform/*"'
+export FZF_CTRL_T_COMMAND='rg --files --hidden --glob "!.git/*" --glob "!.terraform/*"'
+export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always {}' \
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 # Broot
 source /Users/mateipinzaru/.config/broot/launcher/bash/br
@@ -20,30 +25,20 @@ export EDITOR="code"
 export GIT_EDITOR="code"
 export VISUAL="code"
 
-# Git
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RF"
-git config --global interactive.diffFilter "diff-so-fancy --patch"
-git config --global color.ui true
-git config --global color.diff-highlight.oldNormal    "red bold"
-git config --global color.diff-highlight.oldHighlight "red bold 52"
-git config --global color.diff-highlight.newNormal    "green bold"
-git config --global color.diff-highlight.newHighlight "green bold 22"
-git config --global color.diff.meta       "11"
-git config --global color.diff.frag       "magenta bold"
-git config --global color.diff.func       "146 bold"
-git config --global color.diff.commit     "yellow bold"
-git config --global color.diff.old        "red bold"
-git config --global color.diff.new        "green bold"
-git config --global color.diff.whitespace "red reverse"
-
 # App Aliases
 alias k="kubectl"
 alias ls="ls-go -n -l -a -S -L"
 alias lst="ls-go -n -l -a -S -L -r"
-alias bat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias b="br -sdp --show-git-info"
-alias f="fzf"
+alias bat="bat \
+  --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && \
+  echo default || echo GitHub)"
+alias f="fzf \
+  --preview 'bat -n --color=always {}' \
+  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
+alias d="fzf \
+  --bind 'start:reload(rg --hidden --files --null | xargs -0 dirname | uniq)'"
 
 # Navigation Aliases
 alias saggit="cd ~/Work/SAG/git"
