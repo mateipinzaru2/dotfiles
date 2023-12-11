@@ -1,15 +1,5 @@
-# Render prompt on single line
-add_newline = true
 command_timeout = 1000
 format = '$azure$kubernetes$all'
-
-# Disable prompt line break
-[line_break]
-disabled = false
-
-# Drop default prompt character
-[character]
-disabled = false
 
 # Enable Azure in prompt
 [azure]
