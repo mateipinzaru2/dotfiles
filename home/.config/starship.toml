@@ -10,8 +10,6 @@ disabled = false
 # Drop default prompt character
 [character]
 disabled = false
-# success_symbol = ''
-# error_symbol = ''
 
 # Enable Azure in prompt
 [azure]

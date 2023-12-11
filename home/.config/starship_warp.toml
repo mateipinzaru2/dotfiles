@@ -10,12 +10,15 @@ disabled = true
 # Drop default prompt character
 [character]
 disabled = true
-success_symbol = ''
-error_symbol = ''
 
 # Disable previous command status
 [status]
 disabled = true
+
+# Disable previous command duration
+[cmd_duration]
+min_time = 500
+format = 'underwent [$duration](bold yellow)'
 
 # Enable Azure in prompt
 [azure]
