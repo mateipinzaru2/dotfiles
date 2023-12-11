@@ -21,7 +21,6 @@ neofetch
 pipx
 poetry
 pyenv
-python@3.10
 ripgrep
 ruby
 starship

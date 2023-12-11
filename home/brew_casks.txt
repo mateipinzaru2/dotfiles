@@ -2,6 +2,7 @@ adobe-acrobat-reader
 appcleaner
 bitwarden
 brave-browser
+browserosaurus
 cheatsheet
 cyberduck
 devtoys
