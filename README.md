@@ -1,5 +1,5 @@
 # dotfiles
-This is a personal repo containing my most useful dotfiles and brew packages. Most formulae and casks I use are based on the [`rust`](https://www.rust-lang.org/) programming language, so they're ***:fire: `blazingly fast` :fire:***.
+This is a personal repo containing my most useful dotfiles and brew packages. Most formulae and casks I use are based on [`rust`](https://www.rust-lang.org/), so they're ***:fire: `blazingly fast` :fire:***.
 
 ![fast-michael](assets/fast-michael.gif)
 
@@ -59,7 +59,7 @@ Tired of `cd; ls; cd; ls; cd; ls;...` ?
 ![diff-so-fancy](assets/diff-so-fancy.png)
 
 ## [`fzf`](https://github.com/junegunn/fzf)
-If you install only one of the apps here, let it be this one. It's truly :exploding_head: not to mention ***:fire: `blazingly fast` :fire:***. There's literally nothing it can't do, or rather ***`find`***.
+If you install only one of the cli-apps here, let it be this one. It's truly :exploding_head: not to mention ***:fire: `blazingly fast` :fire:***. There's literally nothing it can't do, or rather ***`find`***.
 
 ![fzf](assets/fzf.gif)
 
@@ -72,3 +72,36 @@ If you install only one of the apps here, let it be this one. It's truly :explod
 Why `--help` when you can `tldr {{cli_tool}}`
 
 ![fzf](assets/tldr.png)
+
+## [`browserosaurus`]()
+I got 99 problems but a browser ain't one :sunglasses:.
+
+![browserosaurus](assets/browserosaurus.png)
+
+## [`cheatsheet`](https://macmenubar.com/cheatsheet/)
+`brew install --cask cheatsheet`
+> and just hold down the `command` key.
+
+![cheatsheet](assets/cheatsheet.gif)
+
+## [`fig`](https://fig.io/)
+`Autocomplete` and `chatgpt` both in your shell?! :exploding_head:
+
+![fig](assets/fig.gif)
+
+## [`hiddenbar`](https://github.com/dwarvesf/hidden)
+The mess in your menu bar got you down? No worries! You can sweep it under the rug with `hiddenbar`!
+
+![hiddenbar](assets/hiddenbar.png)
+
+## [`keepingyouawake`](https://github.com/newmarcel/KeepingYouAwake)
+`red-bull` for your Mac's screen.
+
+![keepingyouawake](assets/keepingyouawake.png)
+
+## [`raycast`](https://www.raycast.com/)
+I know I'm repeating myself, but if you install only one of the brew casks here, let it be this one. It's truly :exploding_head: not to mention ***:fire: `blazingly fast` :fire:***. There's literally nothing it can't do, like, really.
+
+It can do everything that `Spotlight` can and much MUCH more, not to mention it's infinitely extensible and customizable.
+
+![raycast](assets/raycast.gif)
