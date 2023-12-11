@@ -17,7 +17,7 @@ homeshick clone https://github.com/mateipinzaru2/dotfiles.git
 > [!CAUTION]
 > This might blow up your Mac, dunno :shrug:.
 ```zsh
-# creates symlinks for all files in this repo under the current's user $HOME directory`
+# creates symlinks for all files in this repo under the current's user $HOME directory
 homeshick link dotfiles
 ```
 
