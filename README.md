@@ -12,9 +12,13 @@ The dotfiles in this repo are tracked and synced with [`homesick`](https://githu
 ```zsh
 # clone this repo to current directory
 homeshick clone https://github.com/mateipinzaru2/dotfiles.git
+```
 
-# creates symlinks for all files in this repo under the current's user $HOME directory
-homeshick link dotfiles 
+> [!CAUTION]
+> This might blow up your Mac, dunno :shrug:.
+```zsh
+# creates symlinks for all files in this repo under the current's user $HOME directory`
+homeshick link dotfiles
 ```
 
 ## Terminal
