@@ -77,10 +77,10 @@ Why `--help` when you can `tldr {{cli_tool}}`
 
 ![fzf](assets/tldr.png)
 
-## [`browserosaurus`]()
+## [`velja`](https://sindresorhus.com/velja)
 I got 99 problems but a browser ain't one :sunglasses:.
 
-![browserosaurus](assets/browserosaurus.png)
+![velja](assets/velja.png)
 
 ## [`cheatsheet`](https://macmenubar.com/cheatsheet/)
 `brew install --cask cheatsheet`
