@@ -39,8 +39,10 @@ function m {
 
 # App Aliases
 alias k="kubectl"
-alias ls="ls-go -n -l -a -S -L"
-alias lst="ls-go -n -l -a -S -L -r"
+alias ls="eza --long --total-size --octal-permissions --no-permissions --all \
+ --git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always"
+alias lst="eza --long --total-size --octal-permissions --no-permissions --all \
+--git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always --tree"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias b="br -sdp --show-git-info"
 

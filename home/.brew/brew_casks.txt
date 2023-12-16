@@ -2,7 +2,6 @@ adobe-acrobat-reader
 appcleaner
 bitwarden
 brave-browser
-browserosaurus
 cheatsheet
 cyberduck
 devtoys
@@ -17,6 +16,7 @@ iterm2
 keepingyouawake
 keystore-explorer
 lens
+licecap
 microsoft-auto-update
 microsoft-azure-storage-explorer
 microsoft-edge
