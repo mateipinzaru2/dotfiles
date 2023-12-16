@@ -36,10 +36,10 @@ The prompt in both terminals is powered by [`starship`](https://starship.rs/). E
 - `home/.config/starship_warp.toml`
 - `home/.config/starship.toml`
 
-## [`ls-go`](https://github.com/acarl005/ls-go)
-One of the few cli tools not written in [`rust`](https://www.rust-lang.org/) but rather [`go`](https://go.dev/). Still ***:fire: `blazingly fast` :fire:***.
+## [`eza`](https://github.com/eza-community/eza)
+like `ls` but ***:fire: `blazingly fast` :fire:***.
 
-![ls-go](assets/ls-go.png)
+![eza](assets/eza.png)
 
 ## [`bat`](https://github.com/sharkdp/bat)
 > `bat`: A `cat` clone with wings.
