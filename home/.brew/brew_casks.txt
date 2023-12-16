@@ -1,5 +1,4 @@
 adobe-acrobat-reader
-appcleaner
 bitwarden
 brave-browser
 cheatsheet

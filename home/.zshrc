@@ -10,6 +10,13 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
     export STARSHIP_CONFIG=~/.config/starship.toml
 fi
 
+# az cli
+autoload -U +X bashcompinit && bashcompinit
+source "$HOME/.homesick/repos/dotfiles/home/.completions/az"
+
+# Broot
+source "$HOME/.config/broot/launcher/bash/br"
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*' --glob '!.terraform/*'"
@@ -26,9 +33,6 @@ function d {
   | xargs -0 dirname | uniq)"
 }
 
-# Broot
-source "$HOME/.config/broot/launcher/bash/br"
-
 # VS Code
 export EDITOR="code -w"
 export GIT_EDITOR="code -w"
@@ -37,11 +41,25 @@ function m {
     man $1 | col -bx | open -fa /Applications/Visual\ Studio\ Code.app
 }
 
+# Copilot
+function gcshell {
+  gh copilot suggest -t 'shell' $1
+}
+function gcgit {
+  gh copilot suggest -t 'git' $1
+}
+function gcgh {
+  gh copilot suggest -t 'gh' $1
+}
+function explain {
+  gh copilot explain $1
+}
+
 # App Aliases
 alias k="kubectl"
-alias ls="eza --long --total-size --octal-permissions --no-permissions --all \
- --git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always"
-alias lst="eza --long --total-size --octal-permissions --no-permissions --all \
+alias ls="eza --long --octal-permissions --no-permissions --all \
+--git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always"
+alias lst="eza --long --octal-permissions --no-permissions --all \
 --git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always --tree"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias b="br -sdp --show-git-info"
