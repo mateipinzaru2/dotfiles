@@ -10,6 +10,10 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
     export STARSHIP_CONFIG=~/.config/starship.toml
 fi
 
+# az cli
+autoload -U +X bashcompinit && bashcompinit
+source "$HOME/.homesick/repos/dotfiles/home/.completions/az"
+
 # Broot
 source "$HOME/.config/broot/launcher/bash/br"
 
