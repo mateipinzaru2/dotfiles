@@ -10,7 +10,11 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
     export STARSHIP_CONFIG=~/.config/starship.toml
 fi
 
+# syntax highlighting
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # az cli
+autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 source "$HOME/.homesick/repos/dotfiles/home/.completions/az"
 
