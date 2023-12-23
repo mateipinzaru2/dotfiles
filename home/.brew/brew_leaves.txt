@@ -29,3 +29,4 @@ terraform
 terraformer
 tldr
 yq
+zsh-syntax-highlighting

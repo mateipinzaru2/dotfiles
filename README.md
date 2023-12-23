@@ -109,3 +109,8 @@ I know I'm repeating myself, but if you install only one of the brew casks here,
 It can do everything that `Spotlight` can and much MUCH more, not to mention it's infinitely extensible and customizable.
 
 ![raycast](assets/raycast.gif)
+
+## [`arc`](https://arc.net/)
+The "***more than a browser***" thing? Pretty legit. :fire::fire::fire:
+
+![arc](assets/arc.gif)
