@@ -46,6 +46,13 @@ format = 'at [$path]($style)[$read_only]($read_only_style) '
 disabled = false
 style = 'bold green'
 
+# Shows current git commit tag
+[git_commit]
+only_detached = false
+tag_disabled = false
+tag_symbol = '🏷  '
+format = '[\($tag\)]($style) '
+
 # Shows terraform version
 [terraform]
 disabled = false

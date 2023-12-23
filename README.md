@@ -21,20 +21,19 @@ homeshick clone https://github.com/mateipinzaru2/dotfiles.git
 homeshick link dotfiles
 ```
 
-## Terminal
-I use 2 terminal emulators:
-- [`warp`](https://www.warp.dev/) for day to day use. The `warp` theme I use is called [`Tokyo Night Storm`](https://github.com/bart-krakowski/warp-tokyo-night).
+## [`warp`](https://www.warp.dev/)
+>Warp is a modern, Rust-based terminal that pins the prompt in place and supports IDE-style text editing.
+
+[![Watch the video](https://img.youtube.com/vi/XWQY8LgkiXM/hqdefault.jpg)](https://www.youtube.com/embed/XWQY8LgkiXM)
+
+The `warp` theme I use is called [`Tokyo Night Storm`](https://github.com/bart-krakowski/warp-tokyo-night).
 
   ![warp](assets/warp-terminal.png)
 
-- [`vscode's integrated terminal`](https://code.visualstudio.com/docs/terminal/basics) for quick git operations. I use the same [`Tokyo Night Storm`](https://vscodethemes.com/e/enkia.tokyo-night/tokyo-night-storm?language=javascript) theme for `vscode`.
+## [`starship`](https://starship.rs/)
+>The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
-  ![vscode](assets/vscode-integrated-terminal.png)
-
-## Prompt
-The prompt in both terminals is powered by [`starship`](https://starship.rs/). Each terminal has its own configuration file:
-- `home/.config/starship_warp.toml`
-- `home/.config/starship.toml`
+![starship](assets/starship.gif)
 
 ## [`eza`](https://github.com/eza-community/eza)
 like `ls` but ***:fire: `blazingly fast` :fire:***.
@@ -77,21 +76,11 @@ Why `--help` when you can `tldr {{cli_tool}}`
 
 ![fzf](assets/tldr.png)
 
-## [`velja`](https://sindresorhus.com/velja)
-I got 99 problems but a browser ain't one :sunglasses:.
-
-![velja](assets/velja.png)
-
 ## [`cheatsheet`](https://macmenubar.com/cheatsheet/)
 `brew install --cask cheatsheet`
 > and just hold down the `command` key.
 
 ![cheatsheet](assets/cheatsheet.gif)
-
-## [`fig`](https://fig.io/)
-`Autocomplete` and `chatgpt` both in your shell?! :exploding_head:
-
-![fig](assets/fig.gif)
 
 ## [`hiddenbar`](https://github.com/dwarvesf/hidden)
 The mess in your menu bar got you down? No worries! You can sweep it under the rug with `hiddenbar`!
@@ -109,3 +98,8 @@ I know I'm repeating myself, but if you install only one of the brew casks here,
 It can do everything that `Spotlight` can and much MUCH more, not to mention it's infinitely extensible and customizable.
 
 ![raycast](assets/raycast.gif)
+
+## [`arc`](https://arc.net/)
+The "***more than a browser***" thing? Pretty legit. :fire::fire::fire:
+
+![arc](assets/arc.gif)

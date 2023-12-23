@@ -1,22 +1,12 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+# Uncomment to use the profiling module
+# zmodload zsh/zprof
 
 # Starship
 eval "$(starship init zsh)"
-if [[ $TERM_PROGRAM = "WarpTerminal" ]] 
-  then 
-    export STARSHIP_CONFIG=~/.config/starship_warp.toml
-  else
-    export STARSHIP_CONFIG=~/.config/starship.toml
-fi
+export STARSHIP_CONFIG=~/.config/starship_warp.toml
 
-# syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# az cli
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-source "$HOME/.homesick/repos/dotfiles/home/.completions/az"
+# Warp
+printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
 
 # Broot
 source "$HOME/.config/broot/launcher/bash/br"
@@ -61,18 +51,22 @@ function explain {
 
 # App Aliases
 alias k="kubectl"
-alias ls="eza --long --octal-permissions --no-permissions --all \
---git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always"
-alias lst="eza --long --octal-permissions --no-permissions --all \
---git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always --tree"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
-alias b="br -sdp --show-git-info"
+alias lg="lazygit"
+alias ls="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --git-ignore --changed --icons=always --color=always"
+alias lsg="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --changed --icons=always --color=always"
+alias lst="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --git-ignore --changed --icons=always --color=always --tree"
+alias lstg="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --changed --icons=always --color=always --tree"
 
 # Navigation Aliases
-alias saggit="cd ~/Work/SAG/git"
-alias tf="cd ~/Work/SAG/git/terraform"
 alias home="cd ~"
 alias homesick="cd ~/.homesick/repos/dotfiles/home"
+alias personal="cd ~/Personal"
+alias work="cd ~/Work"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+# Uncomment to use the profiling module
+# zprof
