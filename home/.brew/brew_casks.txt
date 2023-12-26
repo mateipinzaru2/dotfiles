@@ -3,7 +3,6 @@ arc
 bitwarden
 brave-browser
 cheatsheet
-cyberduck
 devtoys
 discord
 drawio
@@ -14,6 +13,7 @@ hiddenbar
 iina
 iterm2
 keepingyouawake
+keyboardcleantool
 keystore-explorer
 lens
 licecap
