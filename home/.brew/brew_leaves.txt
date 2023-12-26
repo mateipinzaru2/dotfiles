@@ -3,6 +3,7 @@ azure-cli
 azure/kubelogin/kubelogin
 bat
 bfg
+bitwarden-cli
 broot
 cmatrix
 diff-so-fancy
@@ -11,6 +12,7 @@ fzf
 gh
 git
 go
+hashicorp/tap/terraform
 helix
 helm
 homeshick
@@ -25,7 +27,6 @@ ripgrep
 ruby
 starship
 tcptraceroute
-terraform
 terraformer
 tldr
 yq

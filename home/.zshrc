@@ -59,10 +59,10 @@ function explain {
 
 # App Aliases
 alias k="kubectl"
-alias ls="eza --long --octal-permissions --no-permissions --all \
---git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always"
-alias lst="eza --long --octal-permissions --no-permissions --all \
---git --git-ignore --git-repos --changed --group-directories-first --icons=always --color=always --tree"
+alias ls="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --changed --icons=always --color=always"
+alias lst="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --changed --icons=always --color=always --tree"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias b="br -sdp --show-git-info"
 
