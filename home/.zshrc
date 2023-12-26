@@ -1,3 +1,6 @@
+# Uncomment to use the profiling module
+# zmodload zsh/zprof
+
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
@@ -12,11 +15,6 @@ fi
 
 # syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# az cli
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-source "$HOME/.homesick/repos/dotfiles/home/.completions/az"
 
 # Broot
 source "$HOME/.config/broot/launcher/bash/br"
@@ -76,3 +74,5 @@ alias homesick="cd ~/.homesick/repos/dotfiles/home"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# zprof
