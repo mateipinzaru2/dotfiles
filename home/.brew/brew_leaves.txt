@@ -22,7 +22,6 @@ maven
 neofetch
 pipx
 poetry
-pyenv
 ripgrep
 ruby
 starship

@@ -4,17 +4,20 @@
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
-# Starship
+# Check which terminal emulator
 eval "$(starship init zsh)"
 if [[ $TERM_PROGRAM = "WarpTerminal" ]] 
   then 
+    # Starship config for Warp
     export STARSHIP_CONFIG=~/.config/starship_warp.toml
+    # Warpify subshell
+    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
   else
+    # Starship config for all other terminals
     export STARSHIP_CONFIG=~/.config/starship.toml
+    # syntax highlighting for all other terminals
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-
-# syntax highlighting
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Broot
 source "$HOME/.config/broot/launcher/bash/br"
@@ -59,18 +62,23 @@ function explain {
 
 # App Aliases
 alias k="kubectl"
+alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias ls="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --git-ignore --changed --icons=always --color=always"
+alias lsg="eza --long --octal-permissions --no-permissions --all --group-directories-first \
 --git --git-repos --changed --icons=always --color=always"
 alias lst="eza --long --octal-permissions --no-permissions --all --group-directories-first \
+--git --git-repos --git-ignore --changed --icons=always --color=always --tree"
+alias lstg="eza --long --octal-permissions --no-permissions --all --group-directories-first \
 --git --git-repos --changed --icons=always --color=always --tree"
-alias klogin="kubelogin convert-kubeconfig -l azurecli"
-alias b="br -sdp --show-git-info"
 
 # Navigation Aliases
-alias saggit="cd ~/Work/SAG/git"
-alias tf="cd ~/Work/SAG/git/terraform"
 alias home="cd ~"
 alias homesick="cd ~/.homesick/repos/dotfiles/home"
+alias personal="cd ~/Personal"
+alias work="cd ~/Work"
+alias saggit="cd ~/Work/SAG/git"
+alias tf="cd ~/Work/SAG/git/terraform"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
