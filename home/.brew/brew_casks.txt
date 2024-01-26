@@ -1,14 +1,17 @@
 adobe-acrobat-reader
 arc
+azure-data-studio
 bitwarden
 cheatsheet
 devtoys
 discord
 drawio
 firefox
-font-hack-nerd-font
+font-jetbrains-mono-nerd-font
 hiddenbar
+httpie
 iina
+jellyfin
 keepingyouawake
 keyboardcleantool
 keystore-explorer
@@ -17,7 +20,6 @@ licecap
 microsoft-auto-update
 microsoft-azure-storage-explorer
 microsoft-remote-desktop
-postman
 qbittorrent
 raycast
 remote-desktop-manager

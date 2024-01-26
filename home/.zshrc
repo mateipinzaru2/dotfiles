@@ -3,28 +3,41 @@
 
 # Starship
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/.config/starship_warp.toml
-
-# Warp
-printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
+if [[ $TERM_PROGRAM = "WarpTerminal" ]] 
+  then 
+    export STARSHIP_CONFIG=~/.config/starship_warp.toml
+    # Warpify subshell
+    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
+  else
+    export STARSHIP_CONFIG=~/.config/starship.toml
+    # syntax highlighting
+    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 # Broot
-source "$HOME/.config/broot/launcher/bash/br"
+source ~/.config/broot/launcher/bash/br
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*' --glob '!.terraform/*'"
-export FZF_CTRL_T_COMMAND="rg --files --hidden --glob '!.git/*' --glob '!.terraform/*'"
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}' \
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'"
 function f {
-  fzf \
+  local file=$(rg --files --hidden --glob '!.git/*' --glob '!.terraform/*' --glob '!Library/*' ~ | fzf \
   --preview 'bat --color=always {}' \
-  --bind 'ctrl-/:change-preview-window(down|hidden|)'
+  --bind 'ctrl-/:change-preview-window(down|hidden|)' \
+  --bind 'alt-left:backward-word' \
+  --bind 'alt-right:forward-word' \
+  --bind 'ctrl-w:backward-kill-word')
+  if [ -n "$file" ]; then
+    code "$file"
+  fi
 }
 function d {
-  fzf --bind "start:reload(rg --files --hidden --glob '!.git/*' --glob '!.terraform/*' --null \
-  | xargs -0 dirname | uniq)"
+  local dir=$(find $HOME -type d -not -path "$HOME/Library/*" -print0 | fzf --read0 \
+  --bind 'alt-left:backward-word' \
+  --bind 'alt-right:forward-word' \
+  --bind 'ctrl-w:backward-kill-word')
+  if [ -n "$dir" ]; then
+    cd "$dir"
+  fi
 }
 
 # VS Code
@@ -65,8 +78,6 @@ alias lstg="eza --long --octal-permissions --no-permissions --all --group-direct
 # Navigation Aliases
 alias home="cd ~"
 alias homesick="cd ~/.homesick/repos/dotfiles/home"
-alias personal="cd ~/Personal"
-alias work="cd ~/Work"
 
 # Uncomment to use the profiling module
 # zprof

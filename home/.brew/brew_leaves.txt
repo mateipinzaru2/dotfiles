@@ -17,6 +17,7 @@ hashicorp/tap/terraform
 helix
 helm
 homeshick
+httpie
 jq
 kubectx
 lazygit
