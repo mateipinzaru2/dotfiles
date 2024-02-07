@@ -18,25 +18,27 @@ fi
 source ~/.config/broot/launcher/bash/br
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 function f {
-  local file=$(rg --files --hidden --glob '!.git/*' --glob '!.terraform/*' --glob '!Library/*' ~ | fzf \
+  local file=$(rg --files --hidden --glob '!.git/*' --glob '!.venv/*' --glob '!pkg/mod/*' --glob '!.terraform/*' --glob '!Library/*' ~ | fzf \
   --preview 'bat --color=always {}' \
   --bind 'ctrl-/:change-preview-window(down|hidden|)' \
   --bind 'alt-left:backward-word' \
   --bind 'alt-right:forward-word' \
   --bind 'ctrl-w:backward-kill-word')
   if [ -n "$file" ]; then
-    code "$file"
-  fi
-}
-function d {
-  local dir=$(find $HOME -type d -not -path "$HOME/Library/*" -print0 | fzf --read0 \
-  --bind 'alt-left:backward-word' \
-  --bind 'alt-right:forward-word' \
-  --bind 'ctrl-w:backward-kill-word')
-  if [ -n "$dir" ]; then
-    cd "$dir"
+    echo "Select an option:"
+    echo "1. Open with VS Code"
+    echo "2. Open with default macOS app"
+    echo "3. Reveal in Finder"
+    echo "4. Copy path"
+    read "?Option: " option
+    case $option in
+      1) code "$file" ;;
+      2) open "$file" ;;
+      3) open -R "$file" ;;
+      4) echo "$file" | pbcopy ;;
+      *) echo "Invalid option" ;;
+    esac
   fi
 }
 
