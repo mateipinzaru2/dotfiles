@@ -18,13 +18,23 @@ fi
 source ~/.config/broot/launcher/bash/br
 
 # FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 function f {
-  local file=$(rg --files --hidden --glob '!.git/*' --glob '!.venv/*' --glob '!pkg/mod/*' --glob '!.terraform/*' --glob '!Library/*' ~ | fzf \
-  --preview 'bat --color=always {}' \
-  --bind 'ctrl-/:change-preview-window(down|hidden|)' \
-  --bind 'alt-left:backward-word' \
-  --bind 'alt-right:forward-word' \
-  --bind 'ctrl-w:backward-kill-word')
+  local file=$(
+    rg --files \
+       --hidden \
+       --glob '!.git/*' \
+       --glob '!.venv/*' \
+       --glob '!pkg/mod/*' \
+       --glob '!.terraform/*' \
+       --glob '!Library/*' \
+       ~ | 
+    fzf --preview 'bat --color=always {}' \
+       --bind 'ctrl-/:change-preview-window(down|hidden|)' \
+       --bind 'alt-left:backward-word' \
+       --bind 'alt-right:forward-word' \
+       --bind 'ctrl-w:backward-kill-word'
+  )
   if [ -n "$file" ]; then
     echo "Select an option:"
     echo "1. Open with VS Code"
@@ -68,14 +78,21 @@ function explain {
 alias k="kubectl"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias lg="lazygit"
-alias ls="eza --long --octal-permissions --no-permissions --all --group-directories-first \
---git --git-repos --git-ignore --changed --icons=always --color=always"
-alias lsg="eza --long --octal-permissions --no-permissions --all --group-directories-first \
---git --git-repos --changed --icons=always --color=always"
-alias lst="eza --long --octal-permissions --no-permissions --all --group-directories-first \
---git --git-repos --git-ignore --changed --icons=always --color=always --tree"
-alias lstg="eza --long --octal-permissions --no-permissions --all --group-directories-first \
---git --git-repos --changed --icons=always --color=always --tree"
+common_flags="\
+  --long \
+  --octal-permissions \
+  --no-permissions \
+  --all \
+  --group-directories-first \
+  --git \
+  --git-repos \
+  --changed \
+  --icons=always \
+  --color=always"
+alias ls="eza $common_flags --git-ignore"
+alias lsg="eza $common_flags"
+alias lst="eza $common_flags --git-ignore --tree"
+alias lstg="eza $common_flags --tree"
 
 # Navigation Aliases
 alias home="cd ~"
