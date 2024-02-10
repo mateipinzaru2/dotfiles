@@ -46,7 +46,7 @@ function f {
       1) code "$file" ;;
       2) open "$file" ;;
       3) open -R "$file" ;;
-      4) echo "$file" | pbcopy ;;
+      4) echo -n "$file" | pbcopy ;;
       *) echo "Invalid option" ;;
     esac
   fi
