@@ -10,8 +10,10 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
     printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
   else
     export STARSHIP_CONFIG=~/.config/starship.toml
+    # auto suggestions
+    source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
     # syntax highlighting
-    source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
 
 # Broot
