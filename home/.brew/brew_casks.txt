@@ -5,7 +5,6 @@ bitwarden
 cheatsheet
 devtoys
 discord
-drawio
 firefox
 font-jetbrains-mono-nerd-font
 hiddenbar
@@ -17,6 +16,7 @@ keyboardcleantool
 keystore-explorer
 lens
 licecap
+lm-studio
 microsoft-auto-update
 microsoft-azure-storage-explorer
 microsoft-remote-desktop

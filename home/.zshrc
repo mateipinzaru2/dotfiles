@@ -16,22 +16,26 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
     source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # Broot
 source ~/.config/broot/launcher/bash/br
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 function f {
+  local dir=${1:-~}
   local file=$(
-    rg --files \
+    command rg --files \
        --hidden \
        --glob '!.git/*' \
        --glob '!.venv/*' \
        --glob '!pkg/mod/*' \
        --glob '!.terraform/*' \
        --glob '!Library/*' \
-       ~ | 
-    fzf --preview 'bat --color=always {}' \
+       "$dir" | 
+    command fzf --preview 'bat --color=always {}' \
        --bind 'ctrl-/:change-preview-window(down|hidden|)' \
        --bind 'alt-left:backward-word' \
        --bind 'alt-right:forward-word' \
@@ -77,6 +81,8 @@ function explain {
 }
 
 # App Aliases
+alias cd="z"
+alias cdi="zi"
 alias k="kubectl"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
 alias lg="lazygit"
@@ -90,15 +96,12 @@ common_flags="\
   --git-repos \
   --changed \
   --icons=always \
-  --color=always"
+  --color=always \
+  --ignore-glob='*.DS_Store*'"
 alias ls="eza $common_flags --git-ignore"
 alias lsg="eza $common_flags"
 alias lst="eza $common_flags --git-ignore --tree"
 alias lstg="eza $common_flags --tree"
-
-# Navigation Aliases
-alias home="cd ~"
-alias homesick="cd ~/.homesick/repos/dotfiles/home"
 
 # Uncomment to use the profiling module
 # zprof

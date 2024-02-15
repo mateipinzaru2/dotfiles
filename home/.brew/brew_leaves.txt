@@ -14,7 +14,6 @@ gh
 git
 go
 hashicorp/tap/terraform
-helix
 helm
 homeshick
 httpie
@@ -23,6 +22,7 @@ kubectx
 lazygit
 maven
 neofetch
+neovim
 parallel
 pipx
 poetry
@@ -34,4 +34,7 @@ terraformer
 tldr
 watch
 yq
+zoxide
 zsh
+zsh-autocomplete
+zsh-fast-syntax-highlighting
