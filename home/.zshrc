@@ -1,6 +1,10 @@
 # Uncomment to use the profiling module
 # zmodload zsh/zprof
 
+# zsh completions
+autoload -Uz compinit
+compinit
+
 # Starship
 eval "$(starship init zsh)"
 if [[ $TERM_PROGRAM = "WarpTerminal" ]] 
@@ -21,6 +25,10 @@ eval "$(zoxide init zsh)"
 
 # Broot
 source ~/.config/broot/launcher/bash/br
+
+# Switch
+source <(switcher init zsh)
+source <(compdef _switcher switch)
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -85,6 +93,7 @@ alias cd="z"
 alias cdi="zi"
 alias k="kubectl"
 alias klogin="kubelogin convert-kubeconfig -l azurecli"
+alias s="switch"
 alias lg="lazygit"
 common_flags="\
   --long \

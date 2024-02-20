@@ -6,6 +6,7 @@ bfg
 bitwarden-cli
 broot
 cmatrix
+danielfoehrkn/switch/switch
 diff-so-fancy
 exercism
 eza
@@ -18,7 +19,7 @@ helm
 homeshick
 httpie
 jq
-kubectx
+kubernetes-cli
 lazygit
 maven
 neofetch
