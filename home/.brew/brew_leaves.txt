@@ -6,6 +6,7 @@ bfg
 bitwarden-cli
 broot
 cmatrix
+curl
 danielfoehrkn/switch/switch
 diff-so-fancy
 exercism

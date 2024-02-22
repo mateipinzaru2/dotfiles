@@ -20,6 +20,9 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
     source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
 
+# curl
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+
 # zoxide
 eval "$(zoxide init zsh)"
 
