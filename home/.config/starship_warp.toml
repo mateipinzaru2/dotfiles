@@ -16,10 +16,6 @@ disabled = true
 [status]
 disabled = true
 
-# Disable previous command duration
-[cmd_duration]
-disabled = true
-
 # Disable number of jobs running
 [jobs]
 disabled = true

@@ -5,6 +5,8 @@ bat
 bfg
 bitwarden-cli
 broot
+cffi
+checkov
 cmatrix
 curl
 danielfoehrkn/switch/switch
@@ -20,6 +22,7 @@ helm
 homeshick
 httpie
 jq
+keyring
 kubernetes-cli
 lazygit
 maven
@@ -28,12 +31,20 @@ neovim
 parallel
 pipx
 poetry
+pre-commit
+python-argcomplete
+python-packaging
 ripgrep
 ruby
+shellcheck
 starship
 tcptraceroute
+terraform-docs
 terraformer
+tfenv
+tflint
 tldr
+virtualenv
 watch
 yq
 zoxide
