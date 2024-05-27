@@ -25,6 +25,7 @@ jq
 keyring
 kubernetes-cli
 lazygit
+libtermkey
 maven
 neofetch
 neovim
@@ -32,6 +33,7 @@ parallel
 pipx
 poetry
 pre-commit
+pygments
 python-argcomplete
 python-packaging
 ripgrep

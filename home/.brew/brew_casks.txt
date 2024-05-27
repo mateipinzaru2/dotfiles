@@ -25,6 +25,7 @@ raycast
 remote-desktop-manager
 shottr
 slack
+teamviewer
 tempbox
 tor-browser
 utm
