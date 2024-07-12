@@ -35,7 +35,6 @@ source <(switcher init zsh)
 source <(compdef _switcher switch)
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 function f {
   local dir=${1:-~}
   local file=$(
@@ -59,12 +58,14 @@ function f {
     echo "2. Open with default macOS app"
     echo "3. Reveal in Finder"
     echo "4. Copy path"
+    echo "5. Change to parent directory"
     read "?Option: " option
     case $option in
       1) code "$file" ;;
       2) open "$file" ;;
       3) open -R "$file" ;;
       4) echo -n "$file" | pbcopy ;;
+      5) cd "$(dirname "$file")" ;;
       *) echo "Invalid option" ;;
     esac
   fi
