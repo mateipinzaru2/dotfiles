@@ -7,13 +7,14 @@ compinit
 
 # Starship
 eval "$(starship init zsh)"
+export STARSHIP_CONFIG=~/.config/starship.toml
+
+# Terminal specific configurations
 if [[ $TERM_PROGRAM = "WarpTerminal" ]] 
   then 
-    export STARSHIP_CONFIG=~/.config/starship_warp.toml
     # Warpify subshell
     printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
   else
-    export STARSHIP_CONFIG=~/.config/starship.toml
     # auto suggestions
     source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
     # syntax highlighting
