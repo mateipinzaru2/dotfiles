@@ -1,3 +1,3 @@
 # Brew restore backup
-xargs brew install < brew_leaves.txt
-xargs brew install < brew_casks.txt
+xargs brew install --formula < brew_leaves.txt
+xargs brew install --cask < brew_casks.txt

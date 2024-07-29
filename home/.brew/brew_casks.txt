@@ -34,5 +34,4 @@ utm
 visual-studio-code
 warp
 whatsapp
-wireshark
 zoom
