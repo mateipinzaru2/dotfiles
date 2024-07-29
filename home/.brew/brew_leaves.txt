@@ -29,7 +29,6 @@ neovim
 nmap
 parallel
 pipx
-poetry
 pre-commit
 ripgrep
 ruby

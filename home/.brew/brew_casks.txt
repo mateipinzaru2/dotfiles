@@ -5,6 +5,7 @@ bitwarden
 cheatsheet
 devtoys
 discord
+drawio
 firefox
 font-jetbrains-mono-nerd-font
 hiddenbar
@@ -19,6 +20,7 @@ licecap
 lm-studio
 microsoft-auto-update
 microsoft-azure-storage-explorer
+microsoft-excel
 microsoft-remote-desktop
 qbittorrent
 raycast
