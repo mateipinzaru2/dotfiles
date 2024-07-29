@@ -24,8 +24,8 @@ jq
 kubectx
 lazygit
 maven
-neofetch
 neovim
+nerdfetch
 nmap
 parallel
 pipx
