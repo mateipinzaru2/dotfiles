@@ -2,7 +2,6 @@ adobe-acrobat-reader
 arc
 azure-data-studio
 bitwarden
-cheatsheet
 devtoys
 discord
 drawio
@@ -16,7 +15,6 @@ keepingyouawake
 keyboardcleantool
 keystore-explorer
 lens
-licecap
 lm-studio
 microsoft-auto-update
 microsoft-azure-storage-explorer
@@ -27,7 +25,6 @@ raycast
 remote-desktop-manager
 shottr
 slack
-teamviewer
 tempbox
 tor-browser
 utm
@@ -35,4 +32,3 @@ visual-studio-code
 warp
 whatsapp
 wireshark
-zoom
