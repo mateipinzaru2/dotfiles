@@ -8,7 +8,6 @@ drawio
 firefox
 font-jetbrains-mono-nerd-font
 hiddenbar
-httpie
 iina
 jellyfin
 keepingyouawake
@@ -19,7 +18,8 @@ lm-studio
 microsoft-auto-update
 microsoft-azure-storage-explorer
 microsoft-excel
-microsoft-remote-desktop
+postman
+powershell
 qbittorrent
 raycast
 remote-desktop-manager
