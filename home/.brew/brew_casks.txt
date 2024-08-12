@@ -1,4 +1,5 @@
 adobe-acrobat-reader
+appcleaner
 arc
 azure-data-studio
 bitwarden
@@ -26,6 +27,7 @@ remote-desktop-manager
 shottr
 slack
 tempbox
+the-unarchiver
 tor-browser
 utm
 visual-studio-code
