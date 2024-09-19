@@ -1,5 +1,4 @@
 adobe-acrobat-reader
-appcleaner
 arc
 azure-data-studio
 bitwarden
@@ -8,17 +7,17 @@ discord
 drawio
 firefox
 font-jetbrains-mono-nerd-font
-hiddenbar
 iina
 jellyfin
+jordanbaird-ice
 keepingyouawake
-keyboardcleantool
 keystore-explorer
 lens
 lm-studio
 microsoft-auto-update
 microsoft-azure-storage-explorer
 microsoft-excel
+microsoft-word
 postman
 powershell
 qbittorrent
