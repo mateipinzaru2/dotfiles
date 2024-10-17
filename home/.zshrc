@@ -94,13 +94,7 @@ function explain {
 }
 
 # App Aliases
-alias cd="z"
-alias cdi="zi"
-alias k="kubectl"
-alias klogin="kubelogin convert-kubeconfig -l azurecli"
-alias s="switch"
-alias lg="lazygit"
-common_flags="\
+eza_flags="\
   --long \
   --octal-permissions \
   --no-permissions \
@@ -111,11 +105,19 @@ common_flags="\
   --changed \
   --icons=always \
   --color=always \
+  --total-size \
   --ignore-glob='*.DS_Store*'"
-alias ls="eza $common_flags --git-ignore"
-alias lsg="eza $common_flags"
-alias lst="eza $common_flags --git-ignore --tree"
-alias lstg="eza $common_flags --tree"
+alias ls="eza $eza_flags --git-ignore"
+alias lsg="eza $eza_flags"
+alias lst="eza $eza_flags --git-ignore --tree"
+alias lstg="eza $eza_flags --tree"
+alias cd="z"
+alias cdi="zi"
+alias br="br -s"
+alias k="kubectl"
+alias klogin="kubelogin convert-kubeconfig -l azurecli"
+alias s="switch"
+alias lg="lazygit"
 
 # Uncomment to use the profiling module
 # zprof
