@@ -32,6 +32,7 @@ pre-commit
 ripgrep
 ruby
 shellcheck
+sqlcmd
 starship
 tcptraceroute
 terraform-docs

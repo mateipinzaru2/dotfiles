@@ -25,6 +25,7 @@ raycast
 remote-desktop-manager
 shottr
 slack
+teamviewer
 tempbox
 the-unarchiver
 tor-browser
@@ -32,4 +33,5 @@ utm
 visual-studio-code
 warp
 whatsapp
+whisky
 wireshark
