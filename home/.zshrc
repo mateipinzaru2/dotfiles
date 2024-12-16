@@ -15,10 +15,10 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
     # Warpify subshell
     printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "zsh" }}\x9c'
   else
-    # auto suggestions
-    source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
     # syntax highlighting
     source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+    # auto suggestions
+    source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 fi
 
 # curl
