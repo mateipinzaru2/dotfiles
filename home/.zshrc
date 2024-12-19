@@ -45,6 +45,12 @@ function f {
        --glob '!pkg/mod/*' \
        --glob '!.terraform/*' \
        --glob '!Library/*' \
+       --glob '!*.npm/*' \
+       --glob '!*.vscode/*' \
+       --glob '!Pictures/*' \
+       --glob '!*.kube/*' \
+       --glob '!*.local/*' \
+       --glob '!.cache/*' \
        "$dir" | 
     command fzf --preview 'bat --color=always {}' \
        --bind 'ctrl-/:change-preview-window(down|hidden|)' \
@@ -93,24 +99,53 @@ function explain {
   gh copilot explain $1
 }
 
+# Eza
+eza_flags=(
+  '--long'
+  '--octal-permissions'
+  '--no-permissions'
+  '--all'
+  '--group-directories-first'
+  '--git'
+  '--git-repos'
+  '--changed'
+  '--icons=always'
+  '--color=always'
+  '--ignore-glob=*.DS_Store*'
+)
+add_total_size_if_requested() {
+  # Uses $args and $full_flags from the calling function
+  if [[ " ${args[@]} " = *" --total-size "* ]]; then
+    full_flags+=(--total-size)
+    args=("${(@)args:#--total-size}")
+  fi
+}
+ls() {
+  local args=("$@")
+  local full_flags=("${eza_flags[@]}" --git-ignore)
+  add_total_size_if_requested
+  eza "${full_flags[@]}" "${args[@]}"
+}
+lsg() {
+  local args=("$@")
+  local full_flags=("${eza_flags[@]}")
+  add_total_size_if_requested
+  eza "${full_flags[@]}" "${args[@]}"
+}
+lst() {
+  local args=("$@")
+  local full_flags=("${eza_flags[@]}" --git-ignore --tree)
+  add_total_size_if_requested
+  eza "${full_flags[@]}" "${args[@]}"
+}
+lstg() {
+  local args=("$@")
+  local full_flags=("${eza_flags[@]}" --tree)
+  add_total_size_if_requested
+  eza "${full_flags[@]}" "${args[@]}"
+}
+
 # App Aliases
-eza_flags="\
-  --long \
-  --octal-permissions \
-  --no-permissions \
-  --all \
-  --group-directories-first \
-  --git \
-  --git-repos \
-  --changed \
-  --icons=always \
-  --color=always \
-  --total-size \
-  --ignore-glob='*.DS_Store*'"
-alias ls="eza $eza_flags --git-ignore"
-alias lsg="eza $eza_flags"
-alias lst="eza $eza_flags --git-ignore --tree"
-alias lstg="eza $eza_flags --tree"
 alias cd="z"
 alias cdi="zi"
 alias br="br -s"
