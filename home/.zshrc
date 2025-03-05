@@ -103,11 +103,11 @@ function explain {
 }
 
 # Eza
-eza_flags=(
-  '--long'
-  '--octal-permissions'
-  '--no-permissions'
+common_flags=(
   '--all'
+  '--long'
+  '--no-permissions'
+  '--octal-permissions'
   '--group-directories-first'
   '--git'
   '--git-repos'
@@ -116,37 +116,21 @@ eza_flags=(
   '--color=always'
   '--ignore-glob=*.DS_Store*'
 )
-add_total_size_if_requested() {
-  # Uses $args and $full_flags from the calling function
-  if [[ " ${args[@]} " = *" --total-size "* ]]; then
-    full_flags+=(--total-size)
-    args=("${(@)args:#--total-size}")
-  fi
-}
-ls() {
+tree_extra_flags='--only-dirs --tree'
+_eza_call() {
+  local add_git_ignore=$1
+  local extra_flags=$2
+  shift 2
   local args=("$@")
-  local full_flags=("${eza_flags[@]}" --git-ignore)
-  add_total_size_if_requested
+  local full_flags=("${common_flags[@]}")
+  [[ -n "$extra_flags" ]] && full_flags+=(${=extra_flags})
+  (( add_git_ignore )) && full_flags+=(--git-ignore)
   eza "${full_flags[@]}" "${args[@]}"
 }
-lsg() {
-  local args=("$@")
-  local full_flags=("${eza_flags[@]}")
-  add_total_size_if_requested
-  eza "${full_flags[@]}" "${args[@]}"
-}
-lst() {
-  local args=("$@")
-  local full_flags=("${eza_flags[@]}" --git-ignore --tree)
-  add_total_size_if_requested
-  eza "${full_flags[@]}" "${args[@]}"
-}
-lstg() {
-  local args=("$@")
-  local full_flags=("${eza_flags[@]}" --tree)
-  add_total_size_if_requested
-  eza "${full_flags[@]}" "${args[@]}"
-}
+ls()   { _eza_call 1 "" "$@"; }
+lsg()  { _eza_call 0 "" "$@"; }
+lst()  { _eza_call 1 "$tree_extra_flags --ignore-glob=*.terraform*" "$@"; }
+lstg() { _eza_call 0 "$tree_extra_flags" "$@"; }
 
 # App Aliases
 alias cd="z"
