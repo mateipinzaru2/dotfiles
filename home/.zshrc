@@ -89,7 +89,7 @@ export EDITOR="code -w"
 export GIT_EDITOR="code -w"
 export VISUAL="code -w"
 function m {
-    man $1 | col -bx | open -fa /Applications/Visual\ Studio\ Code.app
+    man $1 | col -bx | open -fa /Applications/Cursor.app
 }
 
 # Copilot
