@@ -40,28 +40,32 @@ source <(compdef _switcher switch)
 # FZF
 function f {
   local dir=${1:-~}
-  local file=$(
-    command rg --files \
-       --hidden \
-       --glob '!.git/*' \
-       --glob '!.venv/*' \
-       --glob '!pkg/mod/*' \
-       --glob '!.terraform/*' \
-       --glob '!Library/*' \
-       --glob '!*.npm/*' \
-       --glob '!*.vscode/*' \
-       --glob '!Pictures/*' \
-       --glob '!*.kube/*' \
-       --glob '!*.local/*' \
-       --glob '!.cache/*' \
-       "$dir" | 
-    command fzf --preview 'bat --color=always {}' \
-       --bind 'ctrl-/:change-preview-window(down|hidden|)' \
-       --bind 'alt-left:backward-word' \
-       --bind 'alt-right:forward-word' \
-       --bind 'ctrl-w:backward-kill-word'
+  local file
+  file=$(
+    {
+      command rg --files \
+        --hidden \
+        --glob '!.git/*' \
+        --glob '!.venv/*' \
+        --glob '!pkg/mod/*' \
+        --glob '!.terraform/*' \
+        --glob '!.npm/*' \
+        --glob '!.vscode/*' \
+        --glob '!.cache/*' \
+        --glob '!.local/*' \
+        --glob '!.kube/*' \
+        --glob '!Library/*' \
+        --glob '!Pictures/*' \
+        --no-messages \
+        "$dir" 2>/dev/null \
+        || true
+    } | command fzf --preview 'bat --color=always {}' \
+                   --bind 'ctrl-/:change-preview-window(down|hidden|)' \
+                   --bind 'alt-left:backward-word' \
+                   --bind 'alt-right:forward-word' \
+                   --bind 'ctrl-w:backward-kill-word'
   )
-  if [ -n "$file" ]; then
+  if [[ -n $file ]]; then
     echo "Select an option:"
     echo "1. Open with VS Code"
     echo "2. Open with default macOS app"
@@ -73,7 +77,7 @@ function f {
       1) code "$file" ;;
       2) open "$file" ;;
       3) open -R "$file" ;;
-      4) echo -n "$file" | pbcopy ;;
+      4) printf '%s' "$file" | pbcopy ;;
       5) cd "$(dirname "$file")" ;;
       *) echo "Invalid option" ;;
     esac
