@@ -17,8 +17,10 @@ if [[ $TERM_PROGRAM = "WarpTerminal" ]]
   else
     # syntax highlighting
     source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-    # auto suggestions
+    # auto completion
     source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+    # auto suggestions
+    source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # direnv
